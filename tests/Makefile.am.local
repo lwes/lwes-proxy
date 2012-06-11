@@ -1,0 +1,12 @@
+# put whatever (auto)make commands here, they will be included from Makefile.am
+
+check_PROGRAMS =			\
+  test_lwes_proxy_db
+
+test_lwes_proxy_db_SOURCES =			\
+  test_lwes_proxy_db.c
+test_lwes_proxy_db_LDADD = \
+  @FW_PKGCONFIG_PREREQS_LIBS@
+
+TESTS =					\
+  $(check_PROGRAMS)
