@@ -3,6 +3,7 @@
 parserprefix=lwes_proxy_config_
 AM_YFLAGS=-d -p ${parserprefix}
 AM_LFLAGS=-P${parserprefix}
+# AM_CFLAGS=--std=c99
 LEX_OUTPUT_ROOT = lex.${parserprefix}
 BUILT_SOURCES = \
   lwes_proxy_config_parser.c \
@@ -30,10 +31,18 @@ liblwesproxy_la_LDFLAGS = 	\
   -version-info @FW_PACKAGE_MAJOR_VERSION@:@FW_PACKAGE_MINOR_VERSION@:0
 
 bin_PROGRAMS =		\
-  lwes-proxy
+  lwes-proxy \
+  lwes-journal-counter
+
+lwes_journal_counter_SOURCES = \
+  lwes-journal-counter.c
+lwes_journal_counter_LDADD = \
+  @FW_PKGCONFIG_PREREQS_LIBS@ -lz
 
 lwes_proxy_SOURCES =	\
   lwes-proxy.c
 
 lwes_proxy_LDADD =		\
   liblwesproxy.la
+
+EXTRA_DIST += test.config

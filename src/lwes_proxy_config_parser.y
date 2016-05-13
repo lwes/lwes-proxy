@@ -67,8 +67,19 @@ frontend_defintion : FRONTEND WORD IPADDRESS ':' PORT {
                        free ($2);
                        free ($3);
                      }
+                   | FRONTEND WORD IPADDRESS ':' PORT ':' PORT {
+                       printf ("frontend %s => %s:%d:%d\n", $2, $3, $5, $7);
+                       free ($2);
+                       free ($3);
+                     }
                    | FRONTEND WORD IPADDRESS ':' IPADDRESS ':' PORT  {
                        printf ("frontend %s => %s:%s:%d\n", $2, $3, $5, $7);
+                       free ($2);
+                       free ($3);
+                       free ($5);
+                     }
+                   | FRONTEND WORD IPADDRESS ':' IPADDRESS ':' PORT ':' PORT {
+                       printf ("frontend %s => %s:%s:%d:%d\n", $2, $3, $5, $7, $9);
                        free ($2);
                        free ($3);
                        free ($5);

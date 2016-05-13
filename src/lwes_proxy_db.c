@@ -2,6 +2,7 @@
 
 #include "lwes_proxy_db.h"
 
+#if 0
 struct _LwesProxyDb {
   HashTable *frontend_to_index;
   ArrayList *frontends;
@@ -27,3 +28,4 @@ void lwes_proxy_db_free (LwesProxyDb *db)
   arraylist_free (db->backends);
   free (db);
 }
+#endif

@@ -16,6 +16,7 @@ Makefile.am
 config.h
 lwes-proxy
 lwes-proxy.h
+lwes-journal-counter
 lwes_proxy_config_parser.c
 lwes_proxy_config_parser.h
 lwes_proxy_config_scanner.c

@@ -14,13 +14,13 @@ FW_PACKAGE_ARCHITECTURE_DEPENDENT="1"
 # 
 # For other packaging systems, the syntax is translated for you.
 
-FW_PACKAGE_DEPENDS="lwes, libevent, libcalg, flex, bison"
+FW_PACKAGE_DEPENDS="lwes, libevent, flex, bison" # libcalg
 FW_PACKAGE_CONFLICTS=""
 FW_PACKAGE_PROVIDES=""
 FW_PACKAGE_REPLACES=""
 FW_PACKAGE_SUGGESTS=""
 
-FW_PACKAGE_BUILD_DEPENDS="lwes-devel, libevent-devel, libcalg-devel"
+FW_PACKAGE_BUILD_DEPENDS="lwes-devel, libevent-devel" # libcalg-devel
 FW_PACKAGE_BUILD_CONFLICTS=""
 
 # dupload is used for submitting debian packages to a package archive
